@@ -2,8 +2,4 @@
   <input type="text" ng-model="gemName">
 </form>
 
-<ul>
-  <li ng-repeat="version in rubyGemVersions">
-    {{version.number}} was downloaded {{version.downloads_count}} times
-  </li>
-</ul>
+<div google-chart chart="rubyGemVersionsChart"></div>
