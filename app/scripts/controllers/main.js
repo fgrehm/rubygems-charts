@@ -2,9 +2,8 @@
 
 angular.module('rubygemsChartsApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.rubyGemVersions = [
+      { number: "1.0.0", downloads_count: 123 },
+      { number: "2.0.0", downloads_count: 456 }
+    ]
   });
