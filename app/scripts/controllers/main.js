@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('rubygemsChartsApp')
-  .controller('MainCtrl', function ($scope, RubyGemsApi) {
-    $scope.loadGemStats = function() {
+  .controller('MainCtrl', function ($scope, $location, $routeParams, RubyGemsApi) {
+    $scope.buildChart = function() {
       RubyGemsApi.fetchDownloadStats($scope.gemName).success(function(response) {
         var rows = [];
         for (var i = 0; i < response.data.length; i++) {
@@ -23,5 +23,14 @@ angular.module('rubygemsChartsApp')
           }
         };
       });
+    }
+
+    $scope.loadGemStats = function() {
+      $location.path($scope.gemName);
+    };
+
+    $scope.gemName = $routeParams.gemName;
+    if ($scope.gemName) {
+      $scope.buildChart($scope.gemName);
     }
   });
