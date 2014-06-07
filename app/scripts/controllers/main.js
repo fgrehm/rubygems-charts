@@ -16,14 +16,14 @@ angular.module('rubygemsChartsApp')
           type: 'LineChart',
           data: {
             cols: [
-              {id: "t", label: "Versions",  type: "string"},
-              {id: "s", label: "Downloads", type: "number"}
+              {id: 't', label: 'Versions',  type: 'string'},
+              {id: 's', label: 'Downloads', type: 'number'}
             ],
             rows: rows
           }
         };
       });
-    }
+    };
 
     $scope.loadGemStats = function() {
       $location.path($scope.gemName);
