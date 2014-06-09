@@ -2,4 +2,8 @@
   <input type="text" ng-model="gemName" placeholder="Enter a RubyGem name" class="form-control">
 </form>
 
-<div google-chart chart="rubyGemVersionsChart"></div>
+<div ng-show="loading">
+  <h3 style="text-align: center">Building chart...</h3>
+</div>
+
+<div google-chart chart="rubyGemVersionsChart" ng-show="rubyGemVersionsChart"></div>

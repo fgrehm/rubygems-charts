@@ -3,6 +3,7 @@
 angular.module('rubygemsChartsApp')
   .controller('MainCtrl', function ($scope, $location, $routeParams, RubyGemsApi) {
     $scope.buildChart = function() {
+      $scope.loading = true;
       RubyGemsApi.fetchDownloadStats($scope.gemName).success(function(response) {
         var rows = [];
         for (var i = 0; i < response.data.length; i++) {
@@ -22,6 +23,7 @@ angular.module('rubygemsChartsApp')
             rows: rows
           }
         };
+        $scope.loading = false;
       });
     };
 
